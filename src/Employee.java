@@ -1,24 +1,35 @@
 public class Employee {
-            private final String id;
-            private String employeeData;
-           // private int salary;
-           // private int department;
+     private final String id;
+     private String department;
+     private double salary;
 
-            public Employee (String id, String employeeData) {
-                this.id = id;
-                this.employeeData = employeeData;
-            }
+     public Employee (String id, String department, double salary) {
+         this.id = id;
+         this.department = department;
+         this.salary = salary;
+     }
 
-            public String getId() {
-                return id;
-            }
+     public String getId() {
+        return id;
+     }
 
-            public String getEmployeeData(){
-                return employeeData;
-            }
+     public String getDepartment(){
+        return department;
+     }
 
-            public void setEmployeeData(String employeeData) {
-                this.employeeData = employeeData;
-            }
+     public void setDepartment(String Department) {
+              this.department = Department;
+     }
+     public double getSalary() {
+        return  salary;
+     }
 
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return this.id + " отдел: " + this.getDepartment() + " зарплата: " + this.getSalary();
+    }
 }
