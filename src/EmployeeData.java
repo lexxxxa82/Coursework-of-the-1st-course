@@ -96,7 +96,7 @@ public class EmployeeData {
                 }
             }
         }
-    }
+   }
    private static double minimumWageEmployee (Employee[]employees){
         double minimumSalary = 0;
         for (int i = 0; i < employees.length; i++) {

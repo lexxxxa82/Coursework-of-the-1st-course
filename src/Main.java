@@ -1,4 +1,3 @@
-import static java.lang.System.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,25 +16,25 @@ public class Main {
        // employeeData.addEmployee("Крылова Вера Данииловна", "2",22400);
 
         employeeData.printAllEmployees();
-        out.println();
-        out.println(employeeData);
+        System.out.println();
+        System.out.println(employeeData);
 
-        out.println("Количество сотрудников: " + EmployeeData.getCurrentSize());
-        out.println();
+        System.out.println("Количество сотрудников: " + EmployeeData.getCurrentSize());
+        System.out.println();
 
         employeeData.removeEmployee("Фомин Максим Егоровича");
         employeeData.findEmployee("Фомин Максим Егоровича");
 
-        // employeeData.addEmployee("Крылова Вера Данииловна", "2",22);
+        //employeeData.addEmployee("Крылова Вера Данииловна", "2",22);
         employeeData.printAllEmployees();//список сотрудников
-        out.println();
-        out.println("Количество сотрудников: " + EmployeeData.getCurrentSize());
+        System.out.println();
+        System.out.println("Количество сотрудников: " + EmployeeData.getCurrentSize());
         EmployeeData.totalEmployeePay();//общие затраты на выплату  зарплат
-        out.println();
+        System.out.println();
         EmployeeData.averageStaffSalary();// средняя зарплата
-        out.println();
+        System.out.println();
         EmployeeData.highestPaidEmployeePrint();//сотрудник с максимальной зарплатой
-        out.println();
+        System.out.println();
         EmployeeData.minimumWageEmployeePrint();//сотрудник с минимальной зарплатой
     }
 }
