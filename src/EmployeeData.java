@@ -1,8 +1,10 @@
+
 import java.util.Arrays;
 
 public class EmployeeData {
     private static  Employee[] employees;
-    private static int size;
+
+   / private static int size;
 
     public EmployeeData() {
         employees = new Employee[10];
@@ -40,7 +42,7 @@ public class EmployeeData {
     public void printAllEmployees() {
         for (int i = 0; i < size; i++) {
             Employee employee = employees[i];
-            System.out.println( employee.getId() + " отдел: " + employee.getDepartment()+", зарплата: "+ employee.getSalary());
+            System.out.println( employee.getId());
         }
     }
 
@@ -61,31 +63,31 @@ public class EmployeeData {
         return paymentAmount;
     }
     static void averageStaffSalary() {
-    System.out.printf("Средняя зарплата сотрудника состовляет: %.2f рублей.\n ",averageStaffSalary(employees));
-   }
+        System.out.printf("Средняя зарплата сотрудника состовляет: %.2f рублей.\n ",averageStaffSalary(employees));
+    }
     private static double averageStaffSalary(Employee[]employees) {
-       double averageSalary;
-       averageSalary = totalEmployeePay(employees) / size;
-       return averageSalary;
+        double averageSalary;
+        averageSalary = totalEmployeePay(employees) / size;
+        return averageSalary;
     }
     public static void highestPaidEmployeePrint() {
-       for (Employee employee : employees) {
-           if (employee != null) {
-               if (employee.getSalary() == highestPaidEmployee(employees)) {
-                   System.out.println("Сотрудник с максимальной зарплатой: " + employee);
-               }
-           }
-       }
+        for (Employee employee : employees) {
+            if (employee != null) {
+                if (employee.getSalary() == highestPaidEmployee(employees)) {
+                    System.out.println("Сотрудник с максимальной зарплатой: " + employee);
+                }
+            }
+        }
     }
     private static double highestPaidEmployee (Employee[]employees){
         double maximumSalary = 0;
-           for (Employee employee : employees) {
-               if (employee != null) {
-                   if (employee.getSalary() > maximumSalary) {
-                       maximumSalary = employee.getSalary();
-                   }
-               }
-           }
+        for (Employee employee : employees) {
+            if (employee != null) {
+                if (employee.getSalary() > maximumSalary) {
+                    maximumSalary = employee.getSalary();
+                }
+            }
+        }
         return maximumSalary;
     }
     public static void minimumWageEmployeePrint() {
@@ -96,13 +98,13 @@ public class EmployeeData {
                 }
             }
         }
-   }
-   private static double minimumWageEmployee (Employee[]employees){
+    }
+    private static double minimumWageEmployee (Employee[]employees){
         double minimumSalary = 0;
         for (int i = 0; i < employees.length; i++) {
             if (i==0){
                 minimumSalary = employees[i].getSalary();
-        }
+            }
             if (employees[i] != null) {
                 if (employees[i].getSalary() < minimumSalary) {
                     minimumSalary = employees[i].getSalary();
@@ -110,13 +112,10 @@ public class EmployeeData {
             }
         }
         return minimumSalary;
-   }
-   @Override
-   public String toString() {
-        return "список сотрудников" + Arrays.toString(employees);
-   }
+    }
+    @Override
+    public String toString() {
+        return "список сотрудников \n"+ Arrays.toString(employees);
+    }
 
 }
-
-
-
