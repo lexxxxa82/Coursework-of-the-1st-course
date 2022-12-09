@@ -1,19 +1,19 @@
 public class Employee {
-    private final String id;
+    private final String name;
     private String department;
     private double salary;
-    private final int obj;
-      private static int size;
+    private final int id;
+      private static int size=1;
 
-    public Employee ( String id, String department, double salary) {
-        this.obj = size++;
-        this.id = id;
+    public Employee ( String name, String department, double salary) {
+        this.id = size++;
+        this.name = name;
         this.department = department;
         this.salary = salary;
     }
 
-    public String getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
     public String getDepartment(){
@@ -36,17 +36,17 @@ public class Employee {
             return false;
         }
          Employee c2 = (Employee) other;
-        return id.equals(c2.id);
+        return name.equals(c2.name);
     }
 
     @Override
     public int hashCode() {
-        return java.util.Objects.hash(id);
+        return java.util.Objects.hash(name);
     }
 
     @Override
     public String toString() {
-        return " номер п/п " + obj + " " + this.id + " отдел: " + this.getDepartment() + " зарплата: "
+        return " номер п/п " + id + " " + this.name + " отдел: " + this.getDepartment() + " зарплата: "
                 + this.getSalary() + "\n";
     }
 }
