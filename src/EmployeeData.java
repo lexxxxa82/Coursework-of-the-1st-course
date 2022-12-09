@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class EmployeeData {
     private static  Employee[] employees;
 
-   / private static int size;
+    private static int size;
 
     public EmployeeData() {
         employees = new Employee[10];
@@ -19,8 +19,8 @@ public class EmployeeData {
     }
     public void removeEmployee(String employeeId) {
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getId().equals(employeeId)) {
-                System.out.println("Сотрудник " + employees[i].getId() + " удален(а)");
+            if (employees[i].getName().equals(employeeId)) {
+                System.out.println("Сотрудник " + employees[i].getName() + " удален(а)");
                 System.arraycopy(employees, i + 1, employees, i, size - i - 1);
                 employees[size - 1] = null;
                 size--;
@@ -31,8 +31,8 @@ public class EmployeeData {
     public void findEmployee(String employeeId) {
         for (int i = 0; i < size; i++) {
             Employee employee = employees[i];
-            if (employee.getId().equals(employeeId)) {
-                System.out.println(employee.getId() + " отдел: " + employee.getDepartment()  +", зарплата: "+ employee.getSalary());
+            if (employee.getName().equals(employeeId)) {
+                System.out.println(employee.getName() + " отдел: " + employee.getDepartment()  +", зарплата: "+ employee.getSalary());
                 return;
             }
         }
@@ -42,7 +42,7 @@ public class EmployeeData {
     public void printAllEmployees() {
         for (int i = 0; i < size; i++) {
             Employee employee = employees[i];
-            System.out.println( employee.getId());
+            System.out.println( employee.getName());
         }
     }
 
